@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="bn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Portal</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-gamepad me-2"></i>Game Portal
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <i class="fas fa-home me-1"></i>Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="categories.html">
+                            <i class="fas fa-th-large me-1"></i>Categories
+                        </a>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="fas fa-trophy me-1"></i>Tournaments
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="fas fa-users me-1"></i>Community
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="fas fa-envelope me-1"></i>Contact
+                        </a>
+                    </li> -->
+                </ul>
+            </div>
+            <div class="ms-auto">
+                <button id="modeToggle" class="btn btn-outline-light mode-toggle">🌙 </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Category Page -->
+    <div id="categories-page">
+        <div class="container page-content mt-5">
+            <section class="action-game">
+                <h2 class="category-section-title">Action Game</h2>
+                <div class="row g-4" id="game-list">
+                    <!-- প্রথম ৩টা কার্ড -->
+                    <div class="col-lg-4 col-md-6 game-card-item">
+                        <a class="game-title" href="game-details.html">
+                            <div class="game-card">
+                                <img src="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?w=400&h=250&fit=crop"
+                                    alt="Popular Game 1">
+                                <div class="p-4">
+                                    <h5>The Witcher 3: Wild Hunt</h5>
+                                    <div class="game-stats">
+                                        <span class="rating">★★★★★ 4.9</span>
+                                        <span>500K+ <i class="fa fa-play-circle"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 col-md-6 game-card-item">
+                        <a class="game-title" href="game-details.html">
+                            <div class="game-card">
+                                <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=400&h=250&fit=crop"
+                                    alt="Popular Game 2">
+                                <div class="p-4">
+                                    <h5>Cyberpunk 2077</h5>
+                                    <div class="game-stats">
+                                        <span class="rating">★★★★☆ 4.6</span>
+                                        <span>350K+ <i class="fa fa-play-circle"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 col-md-6 game-card-item-1">
+                        <a class="game-title" href="game-details.html">
+                            <div class="game-card">
+                                <img src="https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=400&h=250&fit=crop"
+                                    alt="Popular Game 3">
+                                <div class="p-4">
+                                    <h5>Call of Duty: Modern Warfare</h5>
+                                    <div class="game-stats">
+                                        <span class="rating">★★★★☆ 4.7</span>
+                                        <span>800K+ <i class="fa fa-play-circle"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- লুকানো কার্ড (প্রথমে hidden থাকবে) -->
+                    <div class="col-lg-4 col-md-6  game-card-item-1 d-none">
+                        <div class="game-card">
+                            <img src="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?w=400&h=250&fit=crop"
+                                alt="Popular Game 1">
+                            <div class="p-4">
+                                <h5>The Witcher 3: Wild Hunt</h5>
+                                <div class="game-stats">
+                                    <span class="rating">★★★★★ 4.9</span>
+                                    <span>500K+ <i class="fa fa-play-circle"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 game-card-item-1 d-none">
+                        <div class="game-card">
+                            <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=400&h=250&fit=crop"
+                                alt="Popular Game 2">
+                            <div class="p-4">
+                                <h5>Cyberpunk 2077</h5>
+                                <div class="game-stats">
+                                    <span class="rating">★★★★☆ 4.6</span>
+                                    <span>350K+ <i class="fa fa-play-circle"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 game-card-item-1 d-none">
+                        <div class="game-card">
+                            <img src="https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=400&h=250&fit=crop"
+                                alt="Popular Game 3">
+                            <div class="p-4">
+                                <h5>Call of Duty: Modern Warfare</h5>
+                                <div class="game-stats">
+                                    <span class="rating">★★★★☆ 4.7</span>
+                                    <span>800K+ <i class="fa fa-play-circle"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 game-card-item-1 d-none">
+                        <div class="game-card">
+                            <img src="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?w=400&h=250&fit=crop"
+                                alt="Popular Game 1">
+                            <div class="p-4">
+                                <h5>The Witcher 3: Wild Hunt</h5>
+                                <div class="game-stats">
+                                    <span class="rating">★★★★★ 4.9</span>
+                                    <span>500K+ <i class="fa fa-play-circle"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 game-card-item-1 d-none">
+                        <div class="game-card">
+                            <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=400&h=250&fit=crop"
+                                alt="Popular Game 2">
+                            <div class="p-4">
+                                <h5>Cyberpunk 2077</h5>
+                                <div class="game-stats">
+                                    <span class="rating">★★★★☆ 4.6</span>
+                                    <span>350K+ <i class="fa fa-play-circle"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 game-card-item-1 d-none">
+                        <div class="game-card">
+                            <img src="https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=400&h=250&fit=crop"
+                                alt="Popular Game 3">
+                            <div class="p-4">
+                                <h5>Call of Duty: Modern Warfare</h5>
+                                <div class="game-stats">
+                                    <span class="rating">★★★★☆ 4.7</span>
+                                    <span>800K+ <i class="fa fa-play-circle"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 game-card-item-1 d-none">
+                        <div class="game-card">
+                            <img src="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?w=400&h=250&fit=crop"
+                                alt="Popular Game 1">
+                            <div class="p-4">
+                                <h5>The Witcher 3: Wild Hunt</h5>
+                                <div class="game-stats">
+                                    <span class="rating">★★★★★ 4.9</span>
+                                    <span>500K+ <i class="fa fa-play-circle"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 game-card-item-1 d-none">
+                        <div class="game-card">
+                            <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=400&h=250&fit=crop"
+                                alt="Popular Game 2">
+                            <div class="p-4">
+                                <h5>Cyberpunk 2077</h5>
+                                <div class="game-stats">
+                                    <span class="rating">★★★★☆ 4.6</span>
+                                    <span>350K+ <i class="fa fa-play-circle"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 game-card-item-1 d-none">
+                        <div class="game-card">
+                            <img src="https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=400&h=250&fit=crop"
+                                alt="Popular Game 3">
+                            <div class="p-4">
+                                <h5>Call of Duty: Modern Warfare</h5>
+                                <div class="game-stats">
+                                    <span class="rating">★★★★☆ 4.7</span>
+                                    <span>800K+ <i class="fa fa-play-circle"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Load More Button -->
+                <div class="text-center mt-4">
+                    <button class="btn btn-primary loadMoreBtn" data-target="1">Load More Games</button>
+                </div>
+            </section>
+
+            <section class="racing-games">
+                <h2 class="category-section-title">Racing Game</h2>
+                <div class="row g-4" id="game-list">
+                    <!-- প্রথম ৩টা কার্ড -->
+                    <div class="col-lg-4 col-md-6 game-card-item">
+                        <a class="game-title" href="game-details.html">
+                            <div class="game-card">
+                                <img src="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?w=400&h=250&fit=crop"
+                                    alt="Popular Game 1">
+                                <div class="p-4">
+                                    <h5>The Witcher 3: Wild Hunt</h5>
+                                    <div class="game-stats">
+                                        <span class="rating">★★★★★ 4.9</span>
+                                        <span>500K+ <i class="fa fa-play-circle"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 col-md-6 game-card-item">
+                        <a class="game-title" href="game-details.html">
+                            <div class="game-card">
+                                <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=400&h=250&fit=crop"
+                                    alt="Popular Game 2">
+                                <div class="p-4">
+                                    <h5>Cyberpunk 2077</h5>
+                                    <div class="game-stats">
+                                        <span class="rating">★★★★☆ 4.6</span>
+                                        <span>350K+ <i class="fa fa-play-circle"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 col-md-6 game-card-item-2">
+                        <a class="game-title" href="game-details.html">
+                            <div class="game-card">
+                                <img src="https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=400&h=250&fit=crop"
+                                    alt="Popular Game 3">
+                                <div class="p-4">
+                                    <h5>Call of Duty: Modern Warfare</h5>
+                                    <div class="game-stats">
+                                        <span class="rating">★★★★☆ 4.7</span>
+                                        <span>800K+ <i class="fa fa-play-circle"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- লুকানো কার্ড (প্রথমে hidden থাকবে) -->
+                    <div class="col-lg-4 col-md-6 game-card-item-2 d-none">
+                        <div class="game-card">
+                            <img src="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?w=400&h=250&fit=crop"
+                                alt="Popular Game 1">
+                            <div class="p-4">
+                                <h5>The Witcher 3: Wild Hunt</h5>
+                                <div class="game-stats">
+                                    <span class="rating">★★★★★ 4.9</span>
+                                    <span>500K+ <i class="fa fa-play-circle"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 game-card-item-2 d-none">
+                        <div class="game-card">
+                            <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=400&h=250&fit=crop"
+                                alt="Popular Game 2">
+                            <div class="p-4">
+                                <h5>Cyberpunk 2077</h5>
+                                <div class="game-stats">
+                                    <span class="rating">★★★★☆ 4.6</span>
+                                    <span>350K+ <i class="fa fa-play-circle"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 game-card-item-2 d-none">
+                        <div class="game-card">
+                            <img src="https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=400&h=250&fit=crop"
+                                alt="Popular Game 3">
+                            <div class="p-4">
+                                <h5>Call of Duty: Modern Warfare</h5>
+                                <div class="game-stats">
+                                    <span class="rating">★★★★☆ 4.7</span>
+                                    <span>800K+ <i class="fa fa-play-circle"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 game-card-item-2 d-none">
+                        <div class="game-card">
+                            <img src="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?w=400&h=250&fit=crop"
+                                alt="Popular Game 1">
+                            <div class="p-4">
+                                <h5>The Witcher 3: Wild Hunt</h5>
+                                <div class="game-stats">
+                                    <span class="rating">★★★★★ 4.9</span>
+                                    <span>500K+ <i class="fa fa-play-circle"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 game-card-item-2 d-none">
+                        <div class="game-card">
+                            <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=400&h=250&fit=crop"
+                                alt="Popular Game 2">
+                            <div class="p-4">
+                                <h5>Cyberpunk 2077</h5>
+                                <div class="game-stats">
+                                    <span class="rating">★★★★☆ 4.6</span>
+                                    <span>350K+ <i class="fa fa-play-circle"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 game-card-item-2 d-none">
+                        <div class="game-card">
+                            <img src="https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=400&h=250&fit=crop"
+                                alt="Popular Game 3">
+                            <div class="p-4">
+                                <h5>Call of Duty: Modern Warfare</h5>
+                                <div class="game-stats">
+                                    <span class="rating">★★★★☆ 4.7</span>
+                                    <span>800K+ <i class="fa fa-play-circle"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 game-card-item-2 d-none">
+                        <div class="game-card">
+                            <img src="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?w=400&h=250&fit=crop"
+                                alt="Popular Game 1">
+                            <div class="p-4">
+                                <h5>The Witcher 3: Wild Hunt</h5>
+                                <div class="game-stats">
+                                    <span class="rating">★★★★★ 4.9</span>
+                                    <span>500K+ <i class="fa fa-play-circle"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 game-card-item-2 d-none">
+                        <div class="game-card">
+                            <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=400&h=250&fit=crop"
+                                alt="Popular Game 2">
+                            <div class="p-4">
+                                <h5>Cyberpunk 2077</h5>
+                                <div class="game-stats">
+                                    <span class="rating">★★★★☆ 4.6</span>
+                                    <span>350K+ <i class="fa fa-play-circle"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 game-card-item-2 d-none">
+                        <div class="game-card">
+                            <img src="https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=400&h=250&fit=crop"
+                                alt="Popular Game 3">
+                            <div class="p-4">
+                                <h5>Call of Duty: Modern Warfare</h5>
+                                <div class="game-stats">
+                                    <span class="rating">★★★★☆ 4.7</span>
+                                    <span>800K+ <i class="fa fa-play-circle"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Load More Button -->
+                <div class="text-center mt-4">
+                    <button class="btn btn-primary loadMoreBtn" data-target="2">Load More Games</button>
+                </div>
+            </section>
+
+            <section class="puzzle-games">
+                <h2 class="category-section-title">Puzzle Game</h2>
+                <div class="row g-4" id="game-list">
+                    <!-- প্রথম ৩টা কার্ড -->
+                    <div class="col-lg-4 col-md-6 game-card-item">
+                        <a class="game-title" href="game-details.html">
+                            <div class="game-card">
+                                <img src="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?w=400&h=250&fit=crop"
+                                    alt="Popular Game 1">
+                                <div class="p-4">
+                                    <h5>The Witcher 3: Wild Hunt</h5>
+                                    <div class="game-stats">
+                                        <span class="rating">★★★★★ 4.9</span>
+                                        <span>500K+ <i class="fa fa-play-circle"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 col-md-6 game-card-item">
+                        <a class="game-title" href="game-details.html">
+                            <div class="game-card">
+                                <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=400&h=250&fit=crop"
+                                    alt="Popular Game 2">
+                                <div class="p-4">
+                                    <h5>Cyberpunk 2077</h5>
+                                    <div class="game-stats">
+                                        <span class="rating">★★★★☆ 4.6</span>
+                                        <span>350K+ <i class="fa fa-play-circle"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 col-md-6 game-card-item">
+                        <div class="game-card">
+                            <img src="https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=400&h=250&fit=crop"
+                                alt="Popular Game 3">
+                            <div class="p-4">
+                                <h5>Call of Duty: Modern Warfare</h5>
+                                <div class="game-stats">
+                                    <span class="rating">★★★★☆ 4.7</span>
+                                    <span>800K+ <i class="fa fa-play-circle"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- লুকানো কার্ড (প্রথমে hidden থাকবে) -->
+                    <div class="col-lg-4 col-md-6 game-card-item-3 d-none">
+                        <div class="game-card">
+                            <img src="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?w=400&h=250&fit=crop"
+                                alt="Popular Game 1">
+                            <div class="p-4">
+                                <h5>The Witcher 3: Wild Hunt</h5>
+                                <div class="game-stats">
+                                    <span class="rating">★★★★★ 4.9</span>
+                                    <span>500K+ <i class="fa fa-play-circle"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 game-card-item-3 d-none">
+                        <div class="game-card">
+                            <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=400&h=250&fit=crop"
+                                alt="Popular Game 2">
+                            <div class="p-4">
+                                <h5>Cyberpunk 2077</h5>
+                                <div class="game-stats">
+                                    <span class="rating">★★★★☆ 4.6</span>
+                                    <span>350K+ <i class="fa fa-play-circle"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 game-card-item-3 d-none">
+                        <div class="game-card">
+                            <img src="https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=400&h=250&fit=crop"
+                                alt="Popular Game 3">
+                            <div class="p-4">
+                                <h5>Call of Duty: Modern Warfare</h5>
+                                <div class="game-stats">
+                                    <span class="rating">★★★★☆ 4.7</span>
+                                    <span>800K+ <i class="fa fa-play-circle"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 game-card-item-3 d-none">
+                        <div class="game-card">
+                            <img src="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?w=400&h=250&fit=crop"
+                                alt="Popular Game 1">
+                            <div class="p-4">
+                                <h5>The Witcher 3: Wild Hunt</h5>
+                                <div class="game-stats">
+                                    <span class="rating">★★★★★ 4.9</span>
+                                    <span>500K+ <i class="fa fa-play-circle"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 game-card-item-3 d-none">
+                        <div class="game-card">
+                            <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=400&h=250&fit=crop"
+                                alt="Popular Game 2">
+                            <div class="p-4">
+                                <h5>Cyberpunk 2077</h5>
+                                <div class="game-stats">
+                                    <span class="rating">★★★★☆ 4.6</span>
+                                    <span>350K+ <i class="fa fa-play-circle"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 game-card-item-3 d-none">
+                        <div class="game-card">
+                            <img src="https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=400&h=250&fit=crop"
+                                alt="Popular Game 3">
+                            <div class="p-4">
+                                <h5>Call of Duty: Modern Warfare</h5>
+                                <div class="game-stats">
+                                    <span class="rating">★★★★☆ 4.7</span>
+                                    <span>800K+ <i class="fa fa-play-circle"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 game-card-item-3 d-none">
+                        <div class="game-card">
+                            <img src="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?w=400&h=250&fit=crop"
+                                alt="Popular Game 1">
+                            <div class="p-4">
+                                <h5>The Witcher 3: Wild Hunt</h5>
+                                <div class="game-stats">
+                                    <span class="rating">★★★★★ 4.9</span>
+                                    <span>500K+ <i class="fa fa-play-circle"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 game-card-item-3 d-none">
+                        <div class="game-card">
+                            <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=400&h=250&fit=crop"
+                                alt="Popular Game 2">
+                            <div class="p-4">
+                                <h5>Cyberpunk 2077</h5>
+                                <div class="game-stats">
+                                    <span class="rating">★★★★☆ 4.6</span>
+                                    <span>350K+ <i class="fa fa-play-circle"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 game-card-item-3 d-none">
+                        <div class="game-card">
+                            <img src="https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=400&h=250&fit=crop"
+                                alt="Popular Game 3">
+                            <div class="p-4">
+                                <h5>Call of Duty: Modern Warfare</h5>
+                                <div class="game-stats">
+                                    <span class="rating">★★★★☆ 4.7</span>
+                                    <span>800K+ <i class="fa fa-play-circle"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Load More Button -->
+                <div class="text-center mt-4">
+                    <button class="btn btn-primary loadMoreBtn" data-target="3">Load More Games</button>
+                </div>
+            </section>
+            <!-- AdSense Block -->
+            <div class="adsense-block">
+                <i class="fas fa-ad fa-2x mb-3"></i>
+                <h4>Google AdSense </h4>
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="mb-0">&copy; 2024 game portal - all rights reserved</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0">Made in Bangladesh ❤️</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+
+
+    <script>
+
+
+
+        const step = 3; // একসাথে কত গেম শো হবে
+
+        document.querySelectorAll(".loadMoreBtn").forEach(button => {
+            let visible = 0;
+            const target = button.getAttribute("data-target");
+            const items = document.querySelectorAll(`.game-card-item-${target}.d-none`);
+
+            button.addEventListener("click", () => {
+                for (let i = visible; i < visible + step; i++) {
+                    if (items[i]) {
+                        items[i].classList.remove("d-none");
+                    }
+                }
+                visible += step;
+
+                if (visible >= items.length) {
+                    button.style.display = "none";
+                }
+            });
+        });
+
+        /* Light/Dark Mode */
+        const toggleBtn = document.getElementById("modeToggle");
+        const body = document.body;
+
+        // Check saved theme from localStorage
+        if (localStorage.getItem("theme") === "dark") {
+            body.classList.add("dark-mode");
+            toggleBtn.textContent = "☀️ ";
+            toggleBtn.classList.remove("btn-outline-light");
+            toggleBtn.classList.add("btn-outline-warning");
+        }
+
+        toggleBtn.addEventListener("click", () => {
+            body.classList.toggle("dark-mode");
+
+            if (body.classList.contains("dark-mode")) {
+                toggleBtn.textContent = "☀️ ";
+                toggleBtn.classList.remove("btn-outline-light");
+                toggleBtn.classList.add("btn-outline-warning");
+                localStorage.setItem("theme", "dark");
+            } else {
+                toggleBtn.textContent = "🌙 ";
+                toggleBtn.classList.remove("btn-outline-warning");
+                toggleBtn.classList.add("btn-outline-light");
+                localStorage.setItem("theme", "light");
+            }
+        });
+
+    </script>
+</body>
+
+</html>

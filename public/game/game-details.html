@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="bn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Portal</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+       <link href="assets/css/style.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-gamepad me-2"></i>Game Portal
+            </a>
+
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <i class="fas fa-home me-1"></i>Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="categories.html">
+                            <i class="fas fa-th-large me-1"></i>Categories
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="ms-auto">
+                <button id="modeToggle" class="btn btn-outline-light mode-toggle">🌙 </button>
+            </div>
+        </div>
+    </nav>
+<!-- Game Detail Page -->
+    <div id="detail-page">
+        <div class="container page-content mt-5">
+            <div class="game-detail-hero">
+                <div class="row align-items-center">
+                    <div class="col-lg-4">
+                        <img id="game-main-image" src="https://images.unsplash.com/photo-1511512578047-dfb367046420?w=400&h=300&fit=crop" alt="Game" class="img-fluid rounded">
+                    </div>
+                    <div class="col-lg-8">
+                        <h1 id="game-title">Spider-Man: Miles Morales</h1>
+                        <div class="mb-3">
+                            <span class="rating fs-4">★★★★☆ 4.5</span>
+                            <!-- <span class="ms-3 text-light">50,000+ <i class="fa fa-play-circle" aria-hidden="true"></i></span> -->
+                        </div>
+                        <div class="d-flex gap-3">
+                            <a href="#" class="btn-gradient btn-lg">Play Now</a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AdSense Block -->
+            <div class="adsense-block">
+                <i class="fas fa-ad fa-2x mb-3"></i>
+                <h4>Google AdSense</h4>
+                <p>Your AdSense code will go here.</p>
+            </div>
+
+            <div class="row mt-5">
+                <div class="col-lg-8">
+                    <!-- Game Details -->
+                    <div class="game-card p-4 mb-4">
+                        <h3>About the game</h3>
+                        <p id="game-full-description">
+                           Spider-Man: Miles Morales is an action-adventure game where you play as Miles Morales, defending New York City.
+In Peter Parker's absence, Miles must become his own Spider-Man.
+Defeat enemies with unique powers like Venom Blast and Camouflage and keep the city safe.
+                        </p>
+
+
+
+                        <h4 class="mt-4">System Requirements</h4>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h6>Minimum:</h6>
+                                <ul class="small">
+                                    <li>OS: Windows 10 64-bit</li>
+                                    <li>Processor: Intel Core i3-4160</li>
+                                    <li>Memory: 8 GB RAM</li>
+                                    <li>Graphics: NVIDIA GTX 950</li>
+                                    <li>Storage: 75 GB</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h6>Recommended:</h6>
+                                <ul class="small">
+                                    <li>OS: Windows 10/11 64-bit</li>
+                                    <li>Processor: Intel Core i5-4670</li>
+                                    <li>Memory: 16 GB RAM</li>
+                                    <li>Graphics: NVIDIA GTX 1060</li>
+                                    <li>Storage: 75 GB SSD</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <!-- Game Info Card -->
+                    <div class="game-card p-4 mb-4">
+                        <h5>Game Info</h5>
+                        <hr>
+                        <div class="mb-3">
+                            <strong>Release Date:</strong><br>
+                            <small>November 12, 2020</small>
+                        </div>
+                        <div class="mb-3">
+                            <strong>Genres:</strong><br>
+                            <small>Action</small>
+                        </div>
+                        <div class="mb-3">
+                            <strong>Platforms:</strong><br>
+                            <small>PC, PlayStation 5, PlayStation 4</small>
+                        </div>
+
+                    </div>
+
+                    <!-- AdSense Block -->
+                    <div class="adsense-block">
+                        <i class="fas fa-ad fa-2x mb-3"></i>
+                        <h4>Google AdSense</h4>
+                        <p>300x250 size</p>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="mb-0">&copy; 2024 game portal - all rights reserved</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0">Made in Bangladesh ❤️</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>
