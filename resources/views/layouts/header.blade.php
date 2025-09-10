@@ -14,8 +14,23 @@
                         </a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="{{ route('about') }}">
+                            <i class="fas fa-user me-2"></i>About Us
+                        </a>
+                    </li>  
+                    <li class="nav-item">
                         <a class="nav-link" href="{{ route('categories.category') }}">
                             <i class="fas fa-th-large me-1"></i>Categories
+                        </a>
+                    </li>  
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('privacy-policy') }}">
+                            <i class="fab fa-galactic-republic me-1"></i>Privacy policy
+                        </a>
+                    </li> 
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('contact') }}">
+                            <i class="fas fa-address-card me-1"></i>Contact Us
                         </a>
                     </li>
 

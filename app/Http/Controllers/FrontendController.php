@@ -1,8 +1,11 @@
 <?php
 namespace App\Http\Controllers;
-
+use App\Mail\ContactMail;
+use Illuminate\Support\Facades\DB;
 use App\Models\Category;
 use App\Models\Gamepost;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class FrontendController extends Controller
 {
@@ -35,14 +38,39 @@ class FrontendController extends Controller
         return view('frontend.category', compact('category', 'gameposts'));
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function showgame($id = null)
+       public function about()
     {
 
-        $gamepost = Gamepost::findOrFail($id);
-        $category = Category::with('gameposts')->get();
-        return view('frontend.game-details', compact('gamepost', 'category'));
+        return view('frontend.about');
+    }
+    public function privacyPolicy()
+    {
+        return view('frontend.privacy-policy');
+    }
+    public function contact()
+    {
+        return view('frontend.contact');
+    }
+
+    public function send(Request $request)
+    {
+        try {
+            // Validation
+            $validated = $request->validate([
+                'name'    => 'required|string|max:255',
+                'company' => 'required|string|max:255',
+                'email'   => 'required|email',
+                'subject' => 'required|string|max:255',
+                'message' => 'required|string|max:2000',
+            ]);
+
+            // Send Mail
+            Mail::to("game@games.b2mwap.com")->send(new ContactMail($validated));
+            // Mail::to("game@games.b2mwap.com")->cc("7bTbG@example.com")->send(new ContactMail($validated));
+
+            return back()->with("success", "Your message has been sent successfully!");
+        } catch (\Exception $e) {
+            return back()->with("error", "An error occurred: " . $e->getMessage());
+        }
     }
 }

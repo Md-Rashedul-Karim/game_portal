@@ -2,6 +2,39 @@
 
 @section('content')
 <style>
+
+    /* Floating action buttons */
+    .floating-actions {
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        z-index: 100;
+    }
+
+    .floating-btn {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        border: none;
+        background: var(--accent-gradient);
+        color: white;
+        font-size: 1.2rem;
+        cursor: pointer;
+        transition: var(--transition);
+        box-shadow: var(--shadow-light);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .floating-btn:hover {
+        transform: scale(1.1);
+        box-shadow: var(--shadow-heavy);
+    }
+    /* Carousel Height */
     .carousel-inner {
         height: 60vh;
     }
@@ -41,9 +74,108 @@
             /* বাটন নিচে নামবে */
         }
     }
+        .loading-shimmer {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .loading-shimmer::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+        animation: shimmer 2s infinite;
+    }
+    /* Responsive Design */
+    @media (max-width: 992px) {
+
+        /* Tablet */
+        .animated-title {
+            font-size: 1.5rem;
+        }
+
+        .animated-text {
+            font-size: 1rem;
+        }
+          .ads-left,
+        .ads-right {
+            display: none;
+        }
+    }
+
+    @media (max-width: 768px) {
+
+        /* Mobile */
+        .animated-title {
+            font-size: 1.2rem;
+        }
+
+        .animated-text {
+            display: block;
+        }
+
+        .animated-btn {
+            font-size: 0.9rem;
+            padding: 8px 16px;
+        }
+
+        .carousel-caption {
+            bottom: 20px;
+        }
+    }
 </style>
 <div id="home-page" class="active-page">
     <div class="container">
+           <!-- Hero Slider -->
+    <section class="hero-section mt-5">
+        <div id="gameSlider" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000" {{--
+            প্রতি 5 সেকেন্ডে স্লাইড হবে --}} data-bs-pause="hover"> {{-- মাউস গেলে থেমে যাবে --}}
+
+            <!-- Indicators -->
+            <div class="carousel-indicators">
+                @foreach ($gameBanners as $index => $gamepost)
+                <button type="button" data-bs-target="#gameSlider" data-bs-slide-to="{{ $index }}"
+                    class="{{ $loop->first ? 'active' : '' }}" aria-current="{{ $loop->first ? 'true' : 'false' }}"
+                    aria-label="Slide {{ $index + 1 }}">
+                </button>
+                @endforeach
+            </div>
+
+            <!-- Carousel Items -->
+            <div class="carousel-inner">
+                @foreach ($gameBanners as $gamepost)
+                <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
+                    <img src="{{ asset('uploads/games/' . $gamepost->game_image) }}" class="d-block w-100"
+                        alt="{{ $gamepost->game_title }}" style="object-fit: fill;">
+
+                    <div class="carousel-caption d-md-block text-center">
+                        <h5 class="animated-title">{{ $gamepost->game_title }}</h5>
+
+                        <a href="{{ route('game-details', $gamepost->id) }}" class="btn-gradient animated-btn">Play Now</a>
+
+                        <!-- Progress Bar -->
+                        {{-- <div class="progress mt-3" style="height: 5px; background: rgba(255,255,255,0.3);">
+                            <div class="progress-bar" role="progressbar"></div>
+                        </div> --}}
+                    </div>
+                </div>
+                @endforeach
+            </div>
+
+            <!-- Controls -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#gameSlider" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#gameSlider" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+
+
+    </section>
         <!-- AdSense Block -->
         <div class="adsense-block mt-5">
             <i class="fas fa-ad fa-2x mb-3"></i>
@@ -55,8 +187,6 @@
         <section class="py-5">
             <h2 class="section-title">Game Categories</h2>
             <div class="row g-4">
-
-
                 @php
                 $icons = [
                 'action' => 'fas fa-fire',

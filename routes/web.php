@@ -22,7 +22,10 @@ Route::get('/', [FrontendController::class, 'index'])->name('frontend.index');
 Route::get('/categories', [FrontendController::class, 'categories'])->name('categories.category');
 Route::get('/category/index/{id?}', [FrontendController::class, 'category'])->name('category.index');
 Route::get('/game-details/{id?}', [FrontendController::class, 'showgame'])->name('game-details');
-
+Route::get('/about', [FrontendController::class, 'about'])->name('about');
+Route::get('/privacy-policy', [FrontendController::class, 'privacyPolicy'])->name('privacy-policy');
+Route::get('/contact', [FrontendController::class, 'contact'])->name('contact');
+Route::post('/contact/send', [FrontendController::class, 'send'])->name('contact.send');
 
 Auth::routes();
 
