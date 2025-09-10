@@ -38,6 +38,16 @@ class FrontendController extends Controller
         return view('frontend.category', compact('category', 'gameposts'));
     }
 
+        public function showgame($id = null)
+    {
+        $gamepost     = Gamepost::findOrFail($id);
+        $category = Category::with('gameposts')->get();
+        return view('frontend.game-details', compact('gamepost', 'category'));
+    }
+
+
+
+
        public function about()
     {
 

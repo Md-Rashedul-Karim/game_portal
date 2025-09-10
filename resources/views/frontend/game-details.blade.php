@@ -33,8 +33,26 @@
                 <div class="col-lg-8" id="game-info">
                     <!-- Hidden Game Container -->
                     <div id="gameContainer" class="d-none ">
-                        <iframe id="gameIframe" src="" width="100%" height="500px" frameborder="0"
-                            allowfullscreen></iframe>
+                        <div class="row">
+                            <div class="col-2">
+                                <div class="side-adsense-block">
+                                    <i class="fas fa-ad fa-2x mb-3"></i>
+                                    <h4>Google AdSense</h4>
+                                    <p>Your AdSense code will go here.</p>
+                                </div>
+                            </div>
+                            <div class="col-8">
+                                <iframe id="gameIframe" src="" width="100%" height="500px" frameborder="0"
+                                    allowfullscreen></iframe>
+                            </div>
+                            <div class="col-2">
+                                <div class="side-adsense-block">
+                                    <i class="fas fa-ad fa-2x mb-3"></i>
+                                    <h4>Google AdSense</h4>
+                                    <p>Your AdSense code will go here.</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div id="gameSection">
                         <h1 id="game-title">{{ $gamepost->game_title }}</h1>
@@ -44,6 +62,9 @@
                         </div>
                         <div class="d-flex gap-3 mb-5">
                             <a href="javascript:void(0);" id="playNowBtn" class="btn-gradient btn-lg">Play Now</a>
+
+                            {{-- <a href="{{ $gamepost->url }}" id="playNowBtn" target="_blank" class="btn-gradient btn-lg">Play
+                                Now</a> --}}
                             <a href="javascript:void(0);" id="closeGameBtn" class="btn btn-danger btn-lg d-none">Close
                                 Game</a>
                         </div>
